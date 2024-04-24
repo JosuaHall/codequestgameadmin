@@ -1,0 +1,310 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: blanchedalmond;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App{
+  text-align: center;
+  margin: 1em auto;
+  width: 70%;
+
+}
+
+.start-button{
+  background-color: rgb(107, 202, 107);
+  font-size: larger;
+  padding: .5em 1em;
+  text-decoration: none;
+  color: black;
+  border-radius: 1em;
+}
+
+.back-button{
+  position: absolute;
+  right: 0;
+  top:0;
+  background-color: rgb(203, 97, 91);
+  font-size: larger;
+  padding: 1em 2em;
+  text-decoration: none;
+  border-radius: 1em;
+  border: none;
+  margin: 10px;
+}
+
+.delete-button{
+  background-color: rgb(203, 97, 91);
+  padding: 0.1em 1em;
+  text-decoration: none;
+  border-radius: 1em;
+  border: none;
+  margin-left: 1em;
+}
+
+.start-button:hover,
+.back-button:hover {
+  transform: scale(1.02);
+}
+
+.add-question-screen > .question-list-item-edit-button{
+  padding:1em;
+}
+.edit-screen > .question-list-item-edit-button{
+  padding:1em;
+}
+
+.login-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-logout-form {
+  border-radius: 1em;
+  border-width: 1px;
+  margin: auto;
+  width: 40%;
+}
+
+.user-icon {
+  margin-right: 20px;
+  padding: 10px;
+  border-radius: 45%;
+  background-color: rgb(233, 233, 233);
+}
+
+.link-register {
+  color: black;
+}
+
+
+/************Start Screen********************/
+
+.start-screen-header h1 {
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+.header-text-image-area {
+  display: grid;
+  grid-template-columns: 70% 20%;
+  gap: 2em;
+  padding: 1em 0;
+}
+
+
+.start-screen-header img {
+  width: 100%;
+}
+
+
+/***********chapter menu***********/
+.chapter-menu-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 60%;
+  margin: 0 auto;
+  gap:2em;
+  padding:1em 0
+}
+
+.chapter-menu-container :nth-child(even){
+  margin-top: 4em;
+}
+
+
+/***********chapter challange list container**************/
+.chapter-challanges-list-container {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: 0 auto;
+  gap: 1em;
+}
+
+
+/***********Challenge***************/
+.challenge-container p {
+  width: 70%;
+  margin: 0 auto;
+}
+
+
+
+
+
+/***********DRAG AND DROP FUNCTIONALITY************/
+.drag-and-drop-container {
+  display: flex;
+}
+
+.code-snippets {
+  flex: 1;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.code-snippet {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+
+}
+
+.code-lines {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+  text-align: left;
+}
+
+.code-line {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  
+}
+
+.dropped-snippet {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.code-preview {
+  align-items: center;
+  background-color: #fff;
+  text-align: left;
+}
+
+
+
+
+
+
+/************Question Bank****************/
+.question-bank-container {
+  width: 80%;
+  margin: 0 auto;
+}
+.question-bank-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em 0;
+}
+
+.question-list-item{
+  display: grid;
+  grid-template-columns: 5fr .5fr .5fr;
+  text-align: left;
+  background-color: #cccccc;
+  padding: .5em;
+  padding-left:1em;
+  border-radius: 1em;
+  margin-bottom: 5px;
+}
+
+.question-list-item-delete-button{
+  text-decoration: none;
+  border: none;
+  background-color: rgb(234, 110, 110);
+  border-radius: 1em;
+  color:black;
+  text-align: center
+}
+
+.question-list-item-edit-button{
+  text-decoration: none;
+  border: none;
+  background-color: rgb(110, 160, 234);
+  border-radius: 1em;
+  color:black;
+  text-align: center;
+}
+
+/*********modal delete*****************/
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  width: 50%;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content p {
+  margin-bottom: 10px;
+}
+
+.modal-content button {
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: solid 1px;
+}
+
+.modal-content button:hover {
+  background-color: #98dafe;
+}
+
+
+
+/***********SUBMISSION****************/
+.submission-list {
+  padding-top: 1em;
+  list-style: none;
+}
+
+.submission-list-item {
+  list-style: none;
+  background-color: #fff;
+  margin: .5em 0;
+  text-align: left;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+.submission-button {
+  background-color: rgb(117, 168, 226);
+  font-size: larger;
+  padding: .5em 1em;
+  text-decoration: none;
+  color: black;
+  border-radius: 1em;
+}
+
+.error {
+
+  width: 50%;
+  padding: 10px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin: 1em auto;
+}
