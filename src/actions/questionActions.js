@@ -25,7 +25,7 @@ import {
   FETCH_DISTRACTOR_LINES_SUCCESS,
   FETCH_DISTRACTOR_LINES_FAILURE,
 } from "./types";
-import packageInfo from "../../package.json";
+import { proxy } from "../../package.json";
 
 export const createQuestion = (questionData) => {
   return async (dispatch) => {
@@ -33,7 +33,7 @@ export const createQuestion = (questionData) => {
 
     try {
       const response = await axios.post(
-        `${packageInfo.proxy}/api/questions/create/question`,
+        `${proxy}/api/questions/create/question`,
         questionData
       ); // Adjust the endpoint URL accordingly
       dispatch({
@@ -55,7 +55,7 @@ export const fetchQuestions = (chapter) => {
 
     try {
       const response = await axios.get(
-        `${packageInfo.proxy}/api/questions/chapter/${chapter}`
+        `${proxy}/api/questions/chapter/${chapter}`
       );
 
       dispatch({
@@ -80,7 +80,7 @@ export const fetchQuestionsByChapter = () => {
 
     try {
       const response = await axios.get(
-        `${packageInfo.proxy}/api/questions/questions-by-chapter`
+        `${proxy}/api/questions/questions-by-chapter`
       );
 
       dispatch({
@@ -103,7 +103,7 @@ export const fetchQuestionById = (chapterId, problemId) => {
 
     try {
       const response = await axios.get(
-        `${packageInfo.proxy}/api/questions/chapter/${chapterId}/problem/${problemId}`
+        `${proxy}/api/questions/chapter/${chapterId}/problem/${problemId}`
       );
       dispatch({
         type: FETCH_QUESTION_SUCCESS,
@@ -125,7 +125,7 @@ export const updateQuestion = (problemId, updatedQuestionData) => {
 
     try {
       const response = await axios.put(
-        `${packageInfo.proxy}/api/questions/${problemId}`,
+        `${proxy}/api/questions/${problemId}`,
         updatedQuestionData
       );
       dispatch({
@@ -147,7 +147,7 @@ export const deleteQuestion = (problemId) => {
 
     try {
       // Make API request to delete the question
-      await axios.delete(`${packageInfo.proxy}/api/questions/${problemId}`);
+      await axios.delete(`${proxy}/api/questions/${problemId}`);
 
       dispatch({
         type: DELETE_QUESTION_SUCCESS,
@@ -167,7 +167,7 @@ export const fetchSubmissions = (chapter) => async (dispatch) => {
 
   try {
     const response = await axios.get(
-      `${packageInfo.proxy}/api/questions/submissions?chapter=${chapter}`
+      `${proxy}/api/questions/submissions?chapter=${chapter}`
     );
 
     dispatch({
@@ -190,7 +190,7 @@ export const resetSubmissionsOfChapter = (chapter) => async (dispatch) => {
   try {
     // Send a DELETE request to your server endpoint with the specified chapter parameter
     const response = await axios.delete(
-      `${packageInfo.proxy}/api/questions/delete/submissions?chapter=${chapter}`
+      `${proxy}/api/questions/delete/submissions?chapter=${chapter}`
     );
 
     // If the request is successful, dispatch DELETE_SUBMISSIONS_SUCCESS with response data
@@ -211,7 +211,7 @@ export const fetchDistractorLines = () => async (dispatch) => {
   dispatch({ type: FETCH_DISTRACTOR_LINES_REQUEST });
   try {
     const response = await axios.get(
-      "${packageInfo.proxy}/api/questions/get/all/distractors"
+      `${proxy}/api/questions/get/all/distractors`
     ); // Assuming your server API endpoint
     dispatch({
       type: FETCH_DISTRACTOR_LINES_SUCCESS,
