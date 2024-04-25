@@ -4,7 +4,7 @@ import QuestionBank from "./../components/startPage/QuestionBank";
 
 const StartPage = () => {
   const openNewWindow = () => {
-    window.open("http://localhost:3000", "_blank");
+    window.open("https://codequestgamestmu.netlify.app/", "_blank");
   };
   return (
     <div className="start-page">
